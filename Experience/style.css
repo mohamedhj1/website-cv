@@ -1,0 +1,473 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-text: #FFD900;
+    --background: #FFD900;
+    --color-selection: #FFD900;
+    --color-p:rgb(208, 208, 208);
+    --color-a: white;
+}
+::selection {
+    background: var(--color-selection) !important;
+   color: white !important;
+}
+
+body {
+    background-image: url(../IMAGE/back1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.experience-section {
+    width: 85%;
+    height: 80%;
+    background-image: url(../IMAGE/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+/** Navigation Bar **/
+.experience-section .navbar{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.navbar .name {
+    font-size: 2.7em;
+    -webkit-text-stroke: 1px var(--color-text);
+    color: transparent;
+}
+
+.navbar .Navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.Navbar-menu a {
+    color: var(--color-a);
+    text-decoration: none;
+    position: relative;
+}
+
+/** Animation Navigation **/
+.Navbar-menu a::before {
+    content: "";
+    width: 0%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: var(--background);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.Navbar-menu a:hover::before {
+    width: 100%;
+}
+
+.Navbar-menu .nav-menu:hover {
+    transform: scale(1.2);
+}
+
+/** Page Selection **/
+.after {
+    position: relative;
+    
+}
+.after::after{
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.after:hover::after {
+    width: 0%;
+}
+
+/** Content **/
+/** Social Media Icons **/
+.experience-section .content {
+    width: 90%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+}
+
+ .content .one {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.one .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 5;
+}
+
+.social-icons .icon-button {
+    font-size: 3.7em;
+    background-color: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/** Profile Image **/
+.profile-image{
+    width: 33.25vw;
+    height: 66vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transform: translateY(5%);
+}
+
+.profile-image .image-frame{
+    width: 80%;
+    height: 90%;
+    background-color: #eee;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+}
+
+/** Experience Text **/
+.experience-section .experience-details {
+    width: 45%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transform: translateY(-63%);
+}
+
+.experience-details .section-heading {
+    font-size: 3em;
+    position: relative;
+    width: max-content;
+}
+
+.experience-details .section-heading::before {
+    content: "";
+    width: 100%;
+    height: 6px;
+    border-radius: 20px;
+    background-color: var(--background);
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+
+.experience-details .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-list .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: white;
+}
+
+.experience-header .experience-title {
+    font-size: 1.8em;
+    width: 78%;
+    margin-bottom: 10px;
+}
+
+.experience-header .experience-year {
+    font-size: 1.2em;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    text-indent: 10px;
+    margin-bottom: 10px;
+}
+
+/** Media queries **/
+/* mobile devices */
+@media (min-width: 300px) and (max-width: 550px) {
+    .experience-section {
+        height: 90%;
+        padding: 10px;
+    }
+    
+    /** Navigation Bar **/
+    .experience-section .navbar{
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    .navbar .name {
+        font-size: 1.2em;
+        margin-bottom: 5%;
+    }
+    
+    .navbar .Navbar-menu {
+        gap: 10px;
+        font-size: 0.7rem;
+    }
+    
+    /** Page Selection **/
+    .after::after{
+        height: 2px;
+    }
+    
+    /** Content **/
+    /** Social Media Icons **/
+    .experience-section .content {
+        width: 90%;
+        height: 80%;
+    }
+    
+    .content .one {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .one .social-icons {
+        flex-direction: row;
+        gap: 30px;
+        margin-bottom: 0px;
+    }
+    
+    .social-icons .icon-button {
+        font-size: 2em;
+    }
+    
+    /** Profile Image **/
+    .profile-image{
+        width: 60.25vw;
+        height: 60.25vw;
+        transform: translateY(0%);
+        margin-bottom: 30px;
+    }
+
+    /** Experience Text **/
+    .experience-section .experience-details {
+        width: 80%;
+        gap: 30px;
+        align-items: center;
+        transform: translateY(-3%);
+    }
+    
+    .experience-details .section-heading {
+        font-size: 2em;
+    }
+
+    .experience-details .section-heading::before {
+        height: 3px;
+        top: -5px;
+    }
+    
+    .experience-details .education-list {
+        gap: 20px;
+    }
+
+    .experience-header .experience-title {
+        font-size: 0.9em;
+        width: 70%;
+        margin-bottom: 8px;
+    }
+    
+    .experience-header .experience-year {
+        font-size: 0.6em;
+    }
+    
+    p {
+        font-size: 0.9em;
+    }
+}
+
+/** Tablette **/
+@media (min-width: 551px) and (max-width: 1200px) {
+    .experience-section {
+        height: 85%;
+        padding: 10px;
+    }
+    
+    /** Navigation Bar **/
+    .experience-section .navbar{
+        width: 100%;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    
+    .navbar .name {
+        font-size: 2em;
+        margin-bottom: 4%;
+    }
+    
+    .navbar .Navbar-menu {
+        gap: 40px;
+        font-size: 1.2rem;
+    }
+    
+    /** Page Selection **/
+    .after::after{
+        height: 2px;
+    }
+    
+    /** Content **/
+    /** Social Media Icons **/
+    .experience-section .content {
+        width: 90%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+    }
+    
+     .content .one {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .one .social-icons {
+        flex-direction: row;
+        gap: 30px;
+        margin-bottom: 0px;
+        z-index: 5;
+    }
+    
+    .social-icons .icon-button {
+        font-size: 2.5em;
+    }
+    
+    /** Profile Image **/
+    .profile-image{
+        width: 45.25vw;
+        height: 45.25vw;
+        transform: translateY(0%);
+        margin-bottom: 30px;
+    }
+
+    /** Experience Text **/
+    .experience-section .experience-details {
+        width: 85%;
+        align-items: center;
+        gap: 10px;
+        transform: translateY(0%);
+    }
+    
+    .experience-details .section-heading {
+        font-size: 2em;
+    }
+
+    .experience-details .section-heading::before {
+        height: 3px;
+        top: -5px;
+    }
+    
+    .experience-details .education-list {
+        gap: 20px;
+    }
+
+    .experience-header .experience-title {
+        font-size: 1.3em;
+        width: 75%;
+        margin-bottom: 8px;
+    }
+    
+    .experience-header .experience-year {
+        font-size: 0.9em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+}
+
+/** Desktop **/
+@media (min-width: 1201px) and (max-width: 1280px) {
+
+    .navbar .name {
+        font-size: 1.8em;
+    }
+    
+    .navbar .Navbar-menu {
+        gap: 40px;
+        font-size: 1em;
+    }
+    /** Content **/
+    /** Social Media Icons **/
+    
+    .social-icons .icon-button {
+        font-size: 3em;
+    }
+
+    /** Profile Image **/
+    .profile-image{
+        width: 37.25vw;
+        height: 66vh;
+    }
+    
+    /** Experience Section **/
+    
+    .experience-section .experience-details {
+        transform: translateY(-40%);
+    }
+    
+    .experience-details .section-heading {
+        font-size: 2.7em;
+    }
+    
+    .experience-header .experience-title{
+        font-size: 1em;
+    }
+    
+    .experience-header .experience-year{
+        font-size: 0.7em;
+    }
+    
+    p {
+        font-size: 1.1em;
+    }
+}
